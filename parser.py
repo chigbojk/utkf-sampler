@@ -48,7 +48,7 @@ def filterJSON(key, val):
     with open(OUTPUT_FILE, 'r') as f:
         data = json.loads(f.read())
         
-        for entry in data[:20]:
+        for entry in data:
             imgName, imgData = entry[0], entry[1]
             if imgData[key] == val:
                 res.append((imgName, imgData))
@@ -65,4 +65,4 @@ def saveFilteredJSON(key="race", val="Others"):
     saveJSON(res, OUT_FILE)
 
 if __name__ == "__main__":
-    saveFilteredJSON("race", "Asian")
+    saveFilteredJSON("race", "Indian")
